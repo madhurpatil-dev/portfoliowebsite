@@ -1,45 +1,40 @@
-// document.addEventListener('contextmenu', event => event.preventDefault());
-// Sticky Navigation Menu JS Code
-let nav = document.querySelector("nav");
-let scrollBtn = document.querySelector(".scroll-button a");
-console.log(scrollBtn);
-let val;
-window.onscroll = function () {
-  if (document.documentElement.scrollTop > 20) {
-    nav.classList.add("sticky");
-    scrollBtn.style.display = "block";
-  } else {
-    nav.classList.remove("sticky");
-    scrollBtn.style.display = "auto";
-  }
-}
+const nav = document.querySelector("nav");
+const scrollBtn = document.querySelector(".scroll-button a");
+const navBar = document.querySelector(".navbar");
+const menuBtn = document.querySelector(".menu-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
+const navLinks = document.querySelectorAll(".menu li a");
 
-let body = document.querySelector("body");
-let navBar = document.querySelector(".navbar");
-let menuBtn = document.querySelector(".menu-btn");
-let cancelBtn = document.querySelector(".cancel-btn");
-menuBtn.onclick = function () {
-  navBar.classList.add("active");
-  menuBtn.style.opacity = "1";
-  menuBtn.style.pointerEvents = "none";
-  // body.style.overflow = "hidden";
-  scrollBtn.style.pointerEvents = "auto";
-}
-cancelBtn.onclick = function () {
-  navBar.classList.remove("active");
-  menuBtn.style.opacity = "1";
-  menuBtn.style.pointerEvents = "auto";
-  body.style.overflow = "auto";
-  scrollBtn.style.pointerEvents = "auto";
-}
+menuBtn.setAttribute("role", "button");
+menuBtn.setAttribute("aria-label", "Open navigation menu");
+menuBtn.setAttribute("tabindex", "0");
+cancelBtn.setAttribute("role", "button");
+cancelBtn.setAttribute("aria-label", "Close navigation menu");
+cancelBtn.setAttribute("tabindex", "0");
 
-// Side Navigation Bar Close While We Click On Navigation Links
-let navLinks = document.querySelectorAll(".menu li a");
-for (var i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener("click", function () {
-    navBar.classList.remove("active");
-    menuBtn.style.opacity = "1";
-    menuBtn.style.pointerEvents = "auto";
-  });
-}
+const setMenuState = (isOpen) => {
+  navBar.classList.toggle("active", isOpen);
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
+  document.body.style.overflow = isOpen ? "hidden" : "";
+};
+
+const updateScrollState = () => {
+  const isScrolled = window.scrollY > 20;
+  nav.classList.toggle("sticky", isScrolled);
+  scrollBtn.classList.toggle("is-visible", isScrolled);
+  scrollBtn.style.display = isScrolled ? "grid" : "none";
+};
+
+window.addEventListener("scroll", updateScrollState, { passive: true });
+updateScrollState();
+
+menuBtn.addEventListener("click", () => setMenuState(true));
+cancelBtn.addEventListener("click", () => setMenuState(false));
+menuBtn.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") setMenuState(true);
+});
+cancelBtn.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") setMenuState(false);
+});
+navLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
 
