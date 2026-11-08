@@ -5,7 +5,7 @@ import { education } from '../../data/portfolio.data';
 @Component({
   imports: [RevealDirective],
   selector: 'app-education',
-  styleUrl: './education.scss',
+  styleUrl: './education.css',
   templateUrl: './education.html',
 })
 export class EducationComponent {

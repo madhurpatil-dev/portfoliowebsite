@@ -5,7 +5,7 @@ import { experience } from '../../data/portfolio.data';
 @Component({
   imports: [RevealDirective],
   selector: 'app-experience',
-  styleUrl: './experience.scss',
+  styleUrl: './experience.css',
   templateUrl: './experience.html',
 })
 export class ExperienceComponent {

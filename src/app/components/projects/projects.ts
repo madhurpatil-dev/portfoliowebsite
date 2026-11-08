@@ -6,7 +6,7 @@ import { projects } from '../../data/portfolio.data';
 @Component({
   imports: [NgOptimizedImage, RevealDirective],
   selector: 'app-projects',
-  styleUrl: './projects.scss',
+  styleUrl: './projects.css',
   templateUrl: './projects.html',
 })
 export class ProjectsComponent {

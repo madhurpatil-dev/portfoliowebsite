@@ -1,4 +1,4 @@
-﻿.site-header {
+.site-header {
   position: sticky;
   z-index: 30;
   top: 0;
@@ -18,7 +18,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  font: 600 0.93rem / 1 var(--font-display);
+  font: 600 0.93rem/1 var(--font-display);
   letter-spacing: -0.02em;
 }
 
@@ -112,16 +112,13 @@
     gap: 1rem;
   }
 }
-
 @media (max-width: 760px) {
   .nav-shell {
     min-height: 68px;
   }
-
   .menu-toggle {
     display: grid;
   }
-
   .nav-menu {
     position: absolute;
     top: 68px;
@@ -136,20 +133,16 @@
     background: var(--page);
     box-shadow: var(--shadow-soft);
   }
-
   .nav-menu.is-open {
     display: grid;
   }
-
   .nav-menu > a {
     padding: 0.75rem;
     font-size: var(--text-sm);
   }
-
   .nav-menu .nav-contact {
     justify-content: space-between;
   }
-
   .theme-toggle {
     position: absolute;
     top: -3.05rem;

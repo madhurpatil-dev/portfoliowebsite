@@ -5,7 +5,7 @@ import { skillGroups } from '../../data/portfolio.data';
 @Component({
   imports: [RevealDirective],
   selector: 'app-skills',
-  styleUrl: './skills.scss',
+  styleUrl: './skills.css',
   templateUrl: './skills.html',
 })
 export class SkillsComponent {

@@ -47,8 +47,8 @@ with paths beginning `assets/`.
 | Original static source (removed)                                     | Angular destination                                                                                                   |
 | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `index.html`                                                         | `src/index.html` for document metadata; page content is split among the standalone components below                   |
-| Existing header/nav markup                                           | `src/app/components/header/header.{ts,html,scss}`                                                                     |
-| Existing hero and architecture illustration                          | `src/app/components/hero/hero.{ts,html,scss}`                                                                         |
+| Existing header/nav markup                                           | `src/app/components/header/header.{ts,html,css}`                                                                      |
+| Existing hero and architecture illustration                          | `src/app/components/hero/hero.{ts,html,css}`                                                                          |
 | About, skills, experience, projects, education, and contact sections | Matching component folders under `src/app/components/`; repeated entries render from `src/app/data/portfolio.data.ts` |
 | Existing footer and back-to-top button                               | `src/app/components/footer/` and `src/app/components/back-to-top/`                                                    |
 | `scripts/main.js`                                                    | Angular bootstrapping in `src/main.ts`; current year in the footer component                                          |
@@ -56,8 +56,8 @@ with paths beginning `assets/`.
 | `scripts/modules/theme.js`                                           | `src/app/services/theme.service.ts`                                                                                   |
 | `scripts/modules/motion.js`                                          | `src/app/directives/reveal.directive.ts` and `src/app/services/reveal.service.ts`                                     |
 | `scripts/modules/back-to-top.js`                                     | `src/app/components/back-to-top/`                                                                                     |
-| `styles/tokens.css`, `base.css`, `layout.css`, `responsive.css`      | SCSS partials in `src/styles/`, imported by `src/styles.scss`                                                         |
-| `styles/components.css`                                              | Scoped component SCSS in `src/app/components/*/*.scss`                                                                |
+| `styles/tokens.css`, `base.css`, `layout.css`, `responsive.css`      | Global styles in `src/styles.css`                                                                                     |
+| `styles/components.css`                                              | Scoped component styles in `src/app/components/*/*.css`                                                               |
 | `Images/*`, `PDFs/*`                                                 | Preserved at `public/assets/Images/` and `public/assets/PDFs/`                                                        |
 | `_redirects`                                                         | `netlify.toml` redirects `/index.html` to `/`                                                                         |
 

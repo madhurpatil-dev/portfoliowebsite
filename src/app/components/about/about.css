@@ -21,7 +21,7 @@
 .about-copy .about-lead {
   margin-bottom: 1rem;
   color: var(--ink);
-  font: 500 clamp(1.4rem, 2.5vw, 2.1rem) / 1.4 var(--font-display);
+  font: 500 clamp(1.4rem, 2.5vw, 2.1rem)/1.4 var(--font-display);
   letter-spacing: -0.04em;
 }
 
@@ -68,17 +68,14 @@
     grid-template-columns: minmax(0, 1fr) minmax(205px, 0.7fr);
     gap: 2rem;
   }
-
   .about-aside {
     max-width: 260px;
   }
 }
-
 @media (max-width: 540px) {
   .about-grid {
     grid-template-columns: 1fr;
   }
-
   .about-aside {
     width: min(77%, 310px);
     justify-self: center;

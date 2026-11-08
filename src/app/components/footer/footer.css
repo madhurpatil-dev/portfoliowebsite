@@ -1,4 +1,4 @@
-﻿.site-footer {
+.site-footer {
   background: var(--surface-dark);
   color: #a6b4aa;
 }
@@ -28,9 +28,8 @@
     grid-template-columns: 1fr auto;
     padding-block: 1rem;
   }
-
   .footer-inner > span:nth-child(2) {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
     grid-row: 2;
   }
 }

@@ -1,4 +1,4 @@
-﻿.section-skills {
+.section-skills {
   background: var(--page);
 }
 
@@ -24,13 +24,13 @@
   align-self: start;
   padding-top: 0.25rem;
   color: var(--warm);
-  font: 600 var(--text-xs) / 1.5 var(--font-display);
+  font: 600 var(--text-xs)/1.5 var(--font-display);
   font-variant-numeric: tabular-nums;
 }
 
 .skill-row h3 {
   margin: 0;
-  font: 500 1.1rem / 1.35 var(--font-display);
+  font: 500 1.1rem/1.35 var(--font-display);
   letter-spacing: -0.025em;
 }
 
@@ -51,13 +51,11 @@
     gap: 0.6rem 0.8rem;
     padding-block: 1.15rem;
   }
-
   .skill-row ul {
     grid-column: 2;
     justify-content: flex-start;
   }
 }
-
 @media (max-width: 540px) {
   .skill-row h3 {
     font-size: 1rem;

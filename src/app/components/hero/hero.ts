@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   imports: [RouterLink],
   selector: 'app-hero',
-  styleUrl: './hero.scss',
+  styleUrl: './hero.css',
   templateUrl: './hero.html',
 })
 export class HeroComponent {}

@@ -1,4 +1,4 @@
-﻿.section-education {
+.section-education {
   background: var(--page-alt);
 }
 
@@ -10,7 +10,7 @@
 
 .education-score strong {
   color: var(--accent-dark);
-  font: 500 clamp(2.6rem, 5vw, 4rem) / 1 var(--font-display);
+  font: 500 clamp(2.6rem, 5vw, 4rem)/1 var(--font-display);
   letter-spacing: -0.08em;
 }
 
@@ -41,7 +41,7 @@
 
 .education-item h3 {
   margin: 0;
-  font: 500 1.12rem / 1.4 var(--font-display);
+  font: 500 1.12rem/1.4 var(--font-display);
 }
 
 .education-item p {
@@ -70,16 +70,13 @@
     grid-template-columns: 1fr auto;
     gap: 0.35rem 0.8rem;
   }
-
   .education-year {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
   }
-
   .education-item > strong {
     align-self: center;
     text-align: right;
   }
-
   .education-score {
     justify-items: start;
   }

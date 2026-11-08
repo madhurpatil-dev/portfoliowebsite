@@ -3,7 +3,7 @@ import { afterNextRender, Component, HostListener, inject, signal } from '@angul
 
 @Component({
   selector: 'app-back-to-top',
-  styleUrl: './back-to-top.scss',
+  styleUrl: './back-to-top.css',
   templateUrl: './back-to-top.html',
 })
 export class BackToTopComponent {

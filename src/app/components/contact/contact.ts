@@ -4,7 +4,7 @@ import { RevealDirective } from '../../directives/reveal.directive';
 @Component({
   imports: [RevealDirective],
   selector: 'app-contact',
-  styleUrl: './contact.scss',
+  styleUrl: './contact.css',
   templateUrl: './contact.html',
 })
 export class ContactComponent {}
