@@ -65,9 +65,9 @@ with paths beginning `assets/`.
 
 The app is prerendered as static HTML (SSG), so it needs no Netlify Functions or persistent Node
 server. The Angular app and its `netlify.toml` are now at the repository root. Set the existing
-Netlify site's **Base directory** to the repository root (clear `angular-app` if it was set there),
-then deploy from the existing production branch. The root configuration sets the build command,
-Node 26, publish directory, and `/index.html` redirect.
+Netlify site's **Base directory** to blank (clear `angular-app` if it was set there), then deploy
+from the existing production branch. The root configuration sets the build command, Node 26, publish
+directory, and `/index.html` redirect.
 
 The prerendered root page includes SEO metadata. `public/robots.txt` and `public/sitemap.xml` are
 published with the app.
