@@ -35,10 +35,15 @@
     >
       <div class="architecture-topline">
         <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>request-flow.java</span>
-        <span class="architecture-version">01 / 03</span>
+        <span class="architecture-file"><span aria-hidden="true">~/</span> request-flow.java</span>
+        <span class="architecture-version"><i aria-hidden="true"></i> LIVE SYSTEM</span>
       </div>
       <div class="architecture-canvas">
+        <span class="scene-orbit orbit-one" aria-hidden="true"></span>
+        <span class="scene-orbit orbit-two" aria-hidden="true"></span>
+        <span class="scene-orbit orbit-three" aria-hidden="true"></span>
+        <span class="scene-glow glow-one" aria-hidden="true"></span>
+        <span class="scene-glow glow-two" aria-hidden="true"></span>
         <svg
           class="architecture-lines"
           viewBox="0 0 500 360"
@@ -50,8 +55,51 @@
             Client requests pass through an API gateway to a Spring service and a persistent
             database.
           </desc>
-          <path class="flow-line" d="M112 177 H190 M310 177 H388" />
-          <path class="flow-line flow-return" d="M388 194 H310 M190 194 H112" />
+          <defs>
+            <linearGradient id="request-flow-gradient">
+              <stop stop-color="#84e0ad" stop-opacity=".2" />
+              <stop offset=".5" stop-color="#a8f0cd" />
+              <stop offset="1" stop-color="#84e0ad" stop-opacity=".2" />
+            </linearGradient>
+            <linearGradient id="response-flow-gradient">
+              <stop stop-color="#f4b77a" stop-opacity=".15" />
+              <stop offset=".5" stop-color="#ffd59f" />
+              <stop offset="1" stop-color="#f4b77a" stop-opacity=".15" />
+            </linearGradient>
+            <marker
+              id="request-flow-arrow"
+              viewBox="0 0 10 10"
+              refX="8"
+              refY="5"
+              markerWidth="4"
+              markerHeight="4"
+              orient="auto-start-reverse"
+            >
+              <path d="M0 0 10 5 0 10Z" fill="#a8f0cd" />
+            </marker>
+            <marker
+              id="response-flow-arrow"
+              viewBox="0 0 10 10"
+              refX="8"
+              refY="5"
+              markerWidth="4"
+              markerHeight="4"
+              orient="auto-start-reverse"
+            >
+              <path d="M0 0 10 5 0 10Z" fill="#ffd59f" />
+            </marker>
+          </defs>
+          <path class="flow-rail" d="M96 170 H404 M96 190 H404" />
+          <path
+            class="flow-line"
+            d="M98 170 H140 M240 170 H270 M370 170 H400"
+            marker-end="url(#request-flow-arrow)"
+          />
+          <path
+            class="flow-line flow-return"
+            d="M400 190 H370 M270 190 H240 M140 190 H98"
+            marker-end="url(#response-flow-arrow)"
+          />
           <circle class="flow-pulse" cx="0" cy="0" r="4" />
           <circle class="flow-pulse pulse-delay" cx="0" cy="0" r="4" />
         </svg>
@@ -62,7 +110,7 @@
               <path d="M8 20h8M12 16.5V20" />
             </svg>
           </span>
-          <span class="node-label">01 <small>CLIENT</small></span>
+          <span class="node-label"><span>01</span><small>CLIENT</small></span>
           <strong>Request</strong>
         </div>
         <div class="architecture-node node-api">
@@ -71,7 +119,7 @@
               <path d="m9 7-5 5 5 5m6-10 5 5-5 5m-2-14-2 18" />
             </svg>
           </span>
-          <span class="node-label">02 <small>EDGE</small></span>
+          <span class="node-label"><span>02</span><small>EDGE</small></span>
           <strong>API gateway</strong>
         </div>
         <div class="architecture-node node-service">
@@ -81,7 +129,7 @@
               <path d="M9 8h6m-6 4h6m-6 4h3" />
             </svg>
           </span>
-          <span class="node-label">03 <small>JAVA</small></span>
+          <span class="node-label"><span>03</span><small>JAVA</small></span>
           <strong>Spring service</strong>
         </div>
         <div class="architecture-node node-data">
@@ -93,9 +141,12 @@
               />
             </svg>
           </span>
-          <span class="node-label">04 <small>DATA</small></span>
+          <span class="node-label"><span>04</span><small>DATA</small></span>
           <strong>Persistence</strong>
         </div>
+        <span class="connection-label connection-one">HTTPS</span>
+        <span class="connection-label connection-two">REST / JSON</span>
+        <span class="connection-label connection-three">JPA</span>
         <div class="architecture-code">
           <span>GET</span> /api/v1/accounts <span class="code-status">200 OK</span>
         </div>
