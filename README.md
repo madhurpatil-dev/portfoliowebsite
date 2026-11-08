@@ -5,7 +5,7 @@ JavaScript site has been removed; the migrated site and its required assets are 
 
 ## Requirements
 
-- Node.js 26 LTS (Angular 22 also supports Node.js 22.22.3+ and 24.15+)
+- Node.js 26.13.0 (Angular 22 also supports Node.js 22.22.3+ and 24.15+)
 - npm
 
 ## Run locally
@@ -67,7 +67,7 @@ The app is prerendered as static HTML (SSG), so it needs no Netlify Functions or
 server. The Angular app and its `netlify.toml` are now at the repository root. Set the existing
 Netlify site's **Base directory** to blank (clear `angular-app` if it was set there), then deploy
 from the existing production branch. The root configuration sets the build command, Node 26, publish
-directory, and `/index.html` redirect.
+directory, Node.js 26.13.0, and the `/index.html` redirect.
 
 The prerendered root page includes SEO metadata. `public/robots.txt` and `public/sitemap.xml` are
 published with the app.
