@@ -3,7 +3,7 @@
   publish = "dist/angular-app/browser"
 
 [build.environment]
-  NODE_VERSION = "26"
+  NODE_VERSION = "26.13.0"
 
 [[redirects]]
   from = "/index.html"
