@@ -1,0 +1,50 @@
+<section class="section section-experience" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <p class="eyebrow"><span>03</span> &nbsp; Professional experience</p>
+      <h2 id="experience-title">Built through<br /><span>real-world work.</span></h2>
+    </div>
+    <div class="experience-list">
+      @for (role of experience; track role.role) {
+        <article class="experience-item" appReveal>
+          <div class="experience-period">
+            <span>{{ role.period }}</span
+            ><span>{{ role.type }}</span>
+          </div>
+          <div class="experience-content">
+            <div class="experience-title">
+              <div>
+                <h3>{{ role.role }}</h3>
+                <p>{{ role.employer }}</p>
+              </div>
+              <img
+                [src]="role.logo"
+                alt=""
+                width="140"
+                height="54"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <ul>
+              @for (highlight of role.highlights; track highlight.before) {
+                <li>
+                  {{ highlight.before }}
+                  @if (highlight.emphasis) {
+                    <strong>{{ highlight.emphasis }}</strong>
+                  }
+                  {{ highlight.after }}
+                </li>
+              }
+            </ul>
+            <div class="experience-tags">
+              @for (tag of role.tags; track tag) {
+                <span>{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

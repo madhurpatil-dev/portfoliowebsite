@@ -1,0 +1,84 @@
+@use './styles/tokens';
+@use './styles/base';
+@use './styles/layout';
+@use './styles/responsive';
+
+main > app-about,
+main > app-skills,
+main > app-experience,
+main > app-projects,
+main > app-education,
+main > app-contact {
+  display: block;
+  content-visibility: auto;
+}
+
+main > app-about {
+  contain-intrinsic-size: auto 51rem;
+}
+
+main > app-skills {
+  contain-intrinsic-size: auto 50rem;
+}
+
+main > app-experience {
+  contain-intrinsic-size: auto 109rem;
+}
+
+main > app-projects {
+  contain-intrinsic-size: auto 116rem;
+}
+
+main > app-education {
+  contain-intrinsic-size: auto 53rem;
+}
+
+main > app-contact {
+  contain-intrinsic-size: auto 25rem;
+}
+
+@media (max-width: 768px) {
+  main > app-about {
+    contain-intrinsic-size: auto 81rem;
+  }
+
+  main > app-skills {
+    contain-intrinsic-size: auto 64rem;
+  }
+
+  main > app-experience {
+    contain-intrinsic-size: auto 130rem;
+  }
+
+  main > app-projects {
+    contain-intrinsic-size: auto 202rem;
+  }
+
+  main > app-education {
+    contain-intrinsic-size: auto 71rem;
+  }
+
+  main > app-contact {
+    contain-intrinsic-size: auto 36rem;
+  }
+}
+
+html.motion-ready .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+}
+
+html.motion-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,86 @@
+.section-about {
+  background: var(--page-alt);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 0.72fr);
+  align-items: center;
+  gap: clamp(3rem, 10vw, 9rem);
+}
+
+.about-copy {
+  max-width: 620px;
+  color: var(--muted);
+}
+
+.about-copy p {
+  margin: 0 0 1.2rem;
+}
+
+.about-copy .about-lead {
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font: 500 clamp(1.4rem, 2.5vw, 2.1rem) / 1.4 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.about-aside {
+  position: relative;
+  max-width: 330px;
+  justify-self: end;
+  padding: 0.7rem;
+  border: 1px solid var(--line);
+  background: var(--page);
+  box-shadow: var(--shadow-soft);
+  transform: rotate(1.5deg);
+  transition: transform 220ms var(--ease-out);
+}
+
+.about-aside:hover {
+  transform: rotate(0);
+}
+
+.about-aside img {
+  width: 100%;
+  height: clamp(300px, 32vw, 390px);
+  object-fit: cover;
+  object-position: 50% 24%;
+}
+
+.about-aside > p {
+  margin: 0;
+  padding: 0.8rem 0.45rem 0.35rem;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
+.about-aside > p span {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(205px, 0.7fr);
+    gap: 2rem;
+  }
+
+  .about-aside {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-aside {
+    width: min(77%, 310px);
+    justify-self: center;
+  }
+}

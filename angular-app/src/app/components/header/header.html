@@ -1,0 +1,45 @@
+<header class="site-header">
+  <nav class="nav-shell container" aria-label="Main navigation">
+    <a class="brand" routerLink="/" fragment="home" aria-label="Madhur Patil, home">
+      <span class="brand-initials" aria-hidden="true">MP</span>
+      <span>Madhur Patil<span class="brand-period">.</span></span>
+    </a>
+    <button
+      class="menu-toggle icon-button"
+      type="button"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="menuOpen() ? 'Close navigation' : 'Open navigation'"
+      aria-controls="site-menu"
+      (click)="toggleMenu()"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+    <div class="nav-menu" id="site-menu" [class.is-open]="menuOpen()">
+      @for (item of navigationLinks; track item.id) {
+        <a routerLink="/" [fragment]="item.id" (click)="closeMenu()">{{ item.label }}</a>
+      }
+      <a class="nav-contact" routerLink="/" fragment="contact" (click)="closeMenu()">
+        Let’s talk <span aria-hidden="true">↗</span>
+      </a>
+      <button
+        class="theme-toggle icon-button"
+        type="button"
+        [attr.aria-label]="theme.isLight() ? 'Switch to dark theme' : 'Switch to light theme'"
+        [attr.aria-pressed]="theme.isLight()"
+        (click)="theme.toggle()"
+      >
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.5 8.5 0 1 0 20.2 15.1Z" />
+        </svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>

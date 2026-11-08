@@ -1,0 +1,27 @@
+<section class="section section-skills" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-heading section-heading-row" appReveal>
+      <div>
+        <p class="eyebrow"><span>02</span> &nbsp; Areas of focus</p>
+        <h2 id="skills-title">The right tools<br />for the <span>job.</span></h2>
+      </div>
+      <p class="section-note">
+        A backend-first toolkit, with enough range to follow a feature from API design through
+        deployment.
+      </p>
+    </div>
+    <div class="skills-list">
+      @for (group of skillGroups; track group.index) {
+        <article class="skill-row" appReveal>
+          <span class="skill-index">{{ group.index }}</span>
+          <h3>{{ group.title }}</h3>
+          <ul>
+            @for (skill of group.skills; track skill) {
+              <li>{{ skill }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

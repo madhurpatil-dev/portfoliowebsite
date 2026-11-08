@@ -1,0 +1,32 @@
+<section class="section section-education" id="education" aria-labelledby="education-title">
+  <div class="container">
+    <div class="section-heading section-heading-row" appReveal>
+      <div>
+        <p class="eyebrow"><span>05</span> &nbsp; Education</p>
+        <h2 id="education-title">Where the curiosity<br /><span>started.</span></h2>
+      </div>
+      <div class="education-score"><strong>9.22</strong><span>/ 10 CGPA</span></div>
+    </div>
+    <div class="education-list">
+      @for (record of education; track record.years) {
+        <article class="education-item" appReveal>
+          <span class="education-year">{{ record.years }}</span>
+          <div>
+            <h3>{{ record.qualification }}</h3>
+            <p>{{ record.institution }}</p>
+            <span>{{ record.details }}</span>
+          </div>
+          <strong>{{ record.score }}</strong>
+        </article>
+      }
+    </div>
+    <a
+      class="inline-link certificate-link"
+      href="assets/PDFs/ProvisionalDegreeCertificate.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View provisional degree certificate <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
