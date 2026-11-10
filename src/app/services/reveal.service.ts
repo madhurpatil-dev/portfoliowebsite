@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
-import { Injectable, inject } from '@angular/core';
+import { Service, inject } from '@angular/core';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class RevealService {
   private readonly document = inject(DOCUMENT);
   private observer?: IntersectionObserver;

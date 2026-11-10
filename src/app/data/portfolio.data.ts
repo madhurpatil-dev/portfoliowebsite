@@ -162,6 +162,19 @@ export const experience: readonly Experience[] = [
 export const projects: readonly Project[] = [
   {
     index: '01',
+    kicker: 'PRODUCTIVITY',
+    title: 'One Stop Tools',
+    description: 'A collection of handy web utilities in one place.',
+    tags: ['Angular', 'TypeScript'],
+    image: 'assets/Images/toolbox.png',
+    imageAlt: 'Preview of One Stop Tools',
+    previewLabel: 'Visit One Stop Tools',
+    href: 'https://onestoptools.netlify.app/',
+    action: 'Visit project',
+    compact: true,
+  },
+  {
+    index: '02',
     kicker: 'DATA PLATFORM',
     format: 'WEB APPLICATION',
     title: 'Data Operations Software',
@@ -174,7 +187,7 @@ export const projects: readonly Project[] = [
     action: 'Explore project',
   },
   {
-    index: '02',
+    index: '03',
     kicker: 'FINAL-YEAR PROJECT',
     format: 'RESEARCH & IMPLEMENTATION',
     title: 'Smart Authentication System',
@@ -188,7 +201,7 @@ export const projects: readonly Project[] = [
     action: 'Read the project thesis',
   },
   {
-    index: '03',
+    index: '04',
     kicker: 'WEB APPLICATION',
     format: 'PRODUCTIVITY',
     title: 'Editing Software',
@@ -202,7 +215,7 @@ export const projects: readonly Project[] = [
     action: 'Visit project',
   },
   {
-    index: '04',
+    index: '05',
     kicker: 'COMPUTER VISION',
     format: 'REAL-TIME DETECTION',
     title: 'Social Distancing Detector',
@@ -213,19 +226,6 @@ export const projects: readonly Project[] = [
     previewLabel: 'View Social Distancing Detector on GitHub',
     href: 'https://github.com/Madhur-451/Social-Distancing-Detector',
     action: 'View on GitHub',
-  },
-  {
-    index: '05',
-    kicker: 'PRODUCTIVITY',
-    title: 'One Stop Tools',
-    description: 'A collection of handy web utilities in one place.',
-    tags: ['Angular', 'TypeScript'],
-    image: 'assets/Images/toolbox.png',
-    imageAlt: 'Preview of One Stop Tools',
-    previewLabel: 'Visit One Stop Tools',
-    href: 'https://onestoptools.netlify.app/',
-    action: 'Visit project',
-    compact: true,
   },
   {
     index: '06',

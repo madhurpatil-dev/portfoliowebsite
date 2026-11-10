@@ -15,4 +15,9 @@ describe('portfolio content', () => {
       expect(project.imageAlt.length).toBeGreaterThan(0);
     }
   });
+
+  it('features One Stop Tools first', () => {
+    expect(projects[0].title).toBe('One Stop Tools');
+    expect(projects[0].index).toBe('01');
+  });
 });
