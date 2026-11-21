@@ -71,7 +71,3 @@ directory, Node.js 26.13.0, and the `/index.html` redirect.
 
 The prerendered root page includes SEO metadata. `public/robots.txt` and `public/sitemap.xml` are
 published with the app.
-
-The contact form uses Netlify Forms and redirects to `/contact-success.html` after submission.
-After deploying, confirm that Netlify detected the `contact` form; submissions are available in
-the site's Forms dashboard, and email notifications can be configured there.
