@@ -51,7 +51,7 @@
   max-width: 730px;
   margin: 0;
   font: 500 var(--text-display)/1.035 var(--font-display);
-  letter-spacing: -0.085em;
+  letter-spacing: -0.045em;
 }
 
 .hero h1 > span {
@@ -222,7 +222,7 @@
   margin-right: auto;
   margin-left: 0.7rem;
   color: var(--scene-secondary);
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
 }
 
 .architecture-file > span {
@@ -254,7 +254,7 @@
   align-items: center;
   gap: 0.45rem;
   color: var(--scene-tertiary);
-  font: 600 0.6875rem/1 var(--font-body);
+  font: 600 0.6875rem/1 var(--font-mono);
   letter-spacing: 0.12em;
 }
 
@@ -580,7 +580,7 @@
   align-items: center;
   gap: 0.38rem;
   color: #e4efe8;
-  font: 700 0.8125rem/1 var(--font-display);
+  font: 700 0.8125rem/1 var(--font-mono);
   letter-spacing: 0.035em;
 }
 

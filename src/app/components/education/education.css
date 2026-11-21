@@ -11,7 +11,7 @@
 .education-score strong {
   color: var(--accent-dark);
   font: 500 clamp(2.6rem, 5vw, 4rem)/1 var(--font-display);
-  letter-spacing: -0.08em;
+  letter-spacing: -0.04em;
 }
 
 .education-score span {
