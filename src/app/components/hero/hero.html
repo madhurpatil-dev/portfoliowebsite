@@ -31,19 +31,14 @@
 
     <div
       class="architecture"
+      role="group"
       aria-label="Illustration of a Java backend request flowing through an API gateway, service, and database"
     >
       <div class="architecture-topline">
-        <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="architecture-file"><span aria-hidden="true">~/</span> request-flow.java</span>
         <span class="architecture-version"><i aria-hidden="true"></i> LIVE SYSTEM</span>
       </div>
       <div class="architecture-canvas">
-        <span class="scene-orbit orbit-one" aria-hidden="true"></span>
-        <span class="scene-orbit orbit-two" aria-hidden="true"></span>
-        <span class="scene-orbit orbit-three" aria-hidden="true"></span>
-        <span class="scene-glow glow-one" aria-hidden="true"></span>
-        <span class="scene-glow glow-two" aria-hidden="true"></span>
         <svg
           class="architecture-lines"
           viewBox="0 0 500 360"
@@ -56,91 +51,55 @@
             database.
           </desc>
           <defs>
-            <linearGradient id="request-flow-gradient">
-              <stop stop-color="#84e0ad" stop-opacity=".2" />
-              <stop offset=".5" stop-color="#a8f0cd" />
-              <stop offset="1" stop-color="#84e0ad" stop-opacity=".2" />
-            </linearGradient>
-            <linearGradient id="response-flow-gradient">
-              <stop stop-color="#f4b77a" stop-opacity=".15" />
-              <stop offset=".5" stop-color="#ffd59f" />
-              <stop offset="1" stop-color="#f4b77a" stop-opacity=".15" />
-            </linearGradient>
             <marker
               id="request-flow-arrow"
               viewBox="0 0 10 10"
               refX="8"
               refY="5"
-              markerWidth="4"
-              markerHeight="4"
+              markerWidth="6"
+              markerHeight="6"
               orient="auto-start-reverse"
             >
-              <path d="M0 0 10 5 0 10Z" fill="#a8f0cd" />
+              <path d="M0 0 10 5 0 10Z" fill="var(--accent)" />
             </marker>
             <marker
               id="response-flow-arrow"
               viewBox="0 0 10 10"
               refX="8"
               refY="5"
-              markerWidth="4"
-              markerHeight="4"
+              markerWidth="6"
+              markerHeight="6"
               orient="auto-start-reverse"
             >
-              <path d="M0 0 10 5 0 10Z" fill="#ffd59f" />
+              <path d="M0 0 10 5 0 10Z" fill="var(--accent)" />
             </marker>
           </defs>
-          <path class="flow-rail" d="M96 170 H404 M96 190 H404" />
+          <path class="flow-rail" d="M96 170 H404" />
           <path
             class="flow-line"
             d="M98 170 H140 M240 170 H270 M370 170 H400"
             marker-end="url(#request-flow-arrow)"
           />
           <path
-            class="flow-line flow-return"
-            d="M400 190 H370 M270 190 H240 M140 190 H98"
+            class="response-route"
+            d="M435 176 V315 H250"
             marker-end="url(#response-flow-arrow)"
           />
-          <circle class="flow-pulse" cx="0" cy="0" r="4" />
-          <circle class="flow-pulse pulse-delay" cx="0" cy="0" r="4" />
         </svg>
-        <div class="architecture-node node-client">
-          <span class="node-icon client-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <rect x="3.5" y="4.5" width="17" height="12" rx="1.5" />
-              <path d="M8 20h8M12 16.5V20" />
-            </svg>
-          </span>
+        <span class="request-packet" aria-hidden="true"></span>
+        <div class="architecture-node node-client" role="group" tabindex="0">
           <span class="node-label"><span>01</span><small>CLIENT</small></span>
           <strong>Request</strong>
         </div>
-        <div class="architecture-node node-api">
-          <span class="node-icon api-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="m9 7-5 5 5 5m6-10 5 5-5 5m-2-14-2 18" />
-            </svg>
-          </span>
+        <div class="architecture-node node-api" role="group" tabindex="0">
           <span class="node-label"><span>02</span><small>EDGE</small></span>
           <strong>API gateway</strong>
         </div>
-        <div class="architecture-node node-service">
-          <span class="node-icon service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <rect x="5" y="3.5" width="14" height="17" rx="2" />
-              <path d="M9 8h6m-6 4h6m-6 4h3" />
-            </svg>
-          </span>
+        <div class="architecture-node node-service" role="group" tabindex="0">
           <span class="node-label"><span>03</span><small>JAVA</small></span>
           <strong>Spring service</strong>
         </div>
-        <div class="architecture-node node-data">
-          <span class="node-icon data-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <ellipse cx="12" cy="5" rx="7.5" ry="3" />
-              <path
-                d="M4.5 5v14c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V5M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"
-              />
-            </svg>
-          </span>
+        <div class="architecture-node node-data" role="group" tabindex="0">
           <span class="node-label"><span>04</span><small>DATA</small></span>
           <strong>Persistence</strong>
         </div>
