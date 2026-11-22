@@ -2,11 +2,6 @@
   background: var(--page);
 }
 
-.section-skills .section-heading {
-  border-bottom: 1px solid var(--line-strong);
-  padding-bottom: 1.3rem;
-}
-
 .section-heading-row .section-note {
   margin-bottom: 0.55rem;
 }
@@ -17,34 +12,26 @@
 
 .skill-row {
   display: grid;
-  grid-template-columns: 3rem minmax(180px, 0.72fr) minmax(0, 1.4fr);
+  grid-template-columns: 2.5rem minmax(180px, 0.72fr) minmax(0, 1.4fr);
   align-items: center;
-  gap: 1rem 2.5rem;
-  min-height: 112px;
-  padding: 1.4rem 0.6rem;
+  gap: 1rem 2rem;
+  min-height: 106px;
+  padding-block: 1.35rem;
   border-bottom: 1px solid var(--line);
-  transition:
-    background-color 180ms ease,
-    padding 180ms var(--ease-out);
-}
-
-.skill-row:hover {
-  padding-inline: 1rem;
-  background: color-mix(in srgb, var(--accent-soft) 48%, transparent);
 }
 
 .skill-index {
   align-self: start;
-  padding-top: 0.3rem;
+  padding-top: 0.25rem;
   color: var(--warm);
-  font: 600 0.75rem/1.5 var(--font-mono);
+  font: 600 var(--text-xs)/1.5 var(--font-display);
   font-variant-numeric: tabular-nums;
 }
 
 .skill-row h3 {
   margin: 0;
-  font: 500 clamp(1.2rem, 1.8vw, 1.5rem)/1.3 var(--font-display);
-  letter-spacing: -0.035em;
+  font: 500 1.1rem/1.35 var(--font-display);
+  letter-spacing: -0.025em;
 }
 
 .skill-row ul {
@@ -67,9 +54,6 @@
   .skill-row ul {
     grid-column: 2;
     justify-content: flex-start;
-  }
-  .skill-row:hover {
-    padding-inline: 0.6rem;
   }
 }
 @media (max-width: 540px) {

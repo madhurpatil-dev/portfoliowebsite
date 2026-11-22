@@ -5,7 +5,7 @@
 
 .footer-inner {
   display: flex;
-  min-height: 84px;
+  min-height: 78px;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -18,13 +18,6 @@
   align-items: center;
   gap: 0.7rem;
   color: #eff1e9;
-  font: 600 0.93rem/1 var(--font-display);
-  letter-spacing: -0.02em;
-  transition: color 160ms ease;
-}
-
-.footer-inner .brand:hover {
-  color: var(--accent);
 }
 
 .footer-inner .brand-initials {
@@ -33,8 +26,7 @@
   height: 2.25rem;
   place-items: center;
   border: 1px solid rgba(232, 241, 233, 0.25);
-  border-radius: 0;
-  background: rgba(232, 241, 233, 0.04);
+  border-radius: 50%;
   color: #b7dfc0;
   font-size: 0.7rem;
   font-weight: 700;
