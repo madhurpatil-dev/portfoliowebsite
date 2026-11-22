@@ -5,13 +5,7 @@
   align-items: center;
   overflow: hidden;
   padding: clamp(4rem, 8vw, 7rem) 0 5.5rem;
-  background:
-    radial-gradient(
-      ellipse at 86% 40%,
-      color-mix(in srgb, var(--accent) 8%, transparent),
-      transparent 34%
-    ),
-    var(--page);
+  background: var(--page);
 }
 
 .hero-grid {
@@ -35,12 +29,11 @@
 
 .availability-dot,
 .architecture-footer i {
-  width: 0.52rem;
-  height: 0.52rem;
+  width: 0.42rem;
+  height: 0.42rem;
   flex: 0 0 auto;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .eyebrow-separator {
@@ -81,7 +74,7 @@
   gap: 1rem;
   padding: 0.65rem 1rem;
   border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   font-size: var(--text-sm);
   font-weight: 700;
   transition:
@@ -150,42 +143,22 @@
   position: relative;
   isolation: isolate;
   padding: 0 1.15rem;
-  border: 1px solid color-mix(in srgb, var(--scene-border) 84%, white);
-  border-radius: 1.1rem;
-  background:
-    radial-gradient(ellipse at 82% 18%, rgba(116, 196, 159, 0.16), transparent 34%),
-    radial-gradient(ellipse at 15% 88%, rgba(100, 145, 221, 0.12), transparent 36%),
-    linear-gradient(145deg, color-mix(in srgb, var(--scene-bg) 92%, white), var(--scene-bg) 62%);
-  box-shadow:
-    0 32px 72px rgba(19, 40, 35, 0.24),
-    0 9px 22px rgba(18, 38, 31, 0.16),
-    inset 0 1px rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--scene-border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0;
+  background: var(--scene-bg);
+  box-shadow: none;
   color: var(--scene-text);
-  transform: perspective(1200px) rotateY(-12deg) rotateX(4deg);
-  transform-style: preserve-3d;
-  transition:
-    transform 600ms var(--ease-out),
-    box-shadow 600ms var(--ease-out);
+  transform: none;
+  transition: border-color 180ms ease;
 }
 
 .architecture:hover {
-  box-shadow:
-    0 42px 86px rgba(19, 40, 35, 0.28),
-    0 14px 28px rgba(18, 38, 31, 0.18),
-    inset 0 1px rgba(255, 255, 255, 0.18);
-  transform: perspective(1200px) rotateY(-7deg) rotateX(2deg) translateY(-6px);
+  border-color: var(--accent);
 }
 
 .architecture::after {
-  position: absolute;
-  z-index: -1;
-  inset: 0.65rem -0.75rem -0.75rem 0.65rem;
-  border: 1px solid color-mix(in srgb, var(--scene-border) 65%, transparent);
-  border-radius: inherit;
-  background: linear-gradient(155deg, rgba(62, 100, 83, 0.24), rgba(22, 38, 34, 0.8));
-  box-shadow: 0 24px 44px rgba(20, 42, 34, 0.12);
-  content: '';
-  transform: translateZ(-30px);
+  display: none;
 }
 
 .architecture::before {
@@ -198,7 +171,7 @@
   background-position: center center;
   background-size: 30px 30px;
   content: '';
-  mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+  opacity: 0.55;
 }
 
 .architecture-topline,
@@ -211,7 +184,6 @@
   justify-content: space-between;
   color: var(--scene-muted);
   font: 500 0.875rem/1.5 var(--font-body);
-  transform: translateZ(34px);
 }
 
 .architecture-topline {
@@ -262,56 +234,25 @@
 .code-status i {
   width: 0.42rem;
   height: 0.42rem;
-  border-radius: 50%;
-  background: #76e3a8;
-  box-shadow: 0 0 12px rgba(118, 227, 168, 0.75);
+  border-radius: 0;
+  background: var(--accent);
 }
 
 .architecture-canvas {
   position: relative;
   min-height: 350px;
-  perspective: 1100px;
-  transform-style: preserve-3d;
 }
 
 .architecture-canvas::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 86%;
-  height: 68%;
-  border: 1px solid rgba(135, 205, 173, 0.28);
-  border-radius: 50%;
-  content: '';
-  transform: translate(-50%, -50%) rotateX(68deg) rotateZ(-14deg) translateZ(-6px);
-  box-shadow:
-    0 0 34px rgba(116, 196, 159, 0.12),
-    inset 0 0 24px rgba(116, 196, 159, 0.07);
+  display: none;
 }
 
 .architecture-canvas::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 68%;
-  height: 86%;
-  border: 1px solid rgba(135, 205, 173, 0.2);
-  border-radius: 50%;
-  content: '';
-  transform: translate(-50%, -50%) rotateX(68deg) rotateZ(28deg) translateZ(-9px);
+  display: none;
 }
 
 .scene-orbit {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  width: 66%;
-  height: 54%;
-  border: 1px solid rgba(166, 230, 196, 0.18);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%) rotateX(67deg) rotateZ(-22deg) translateZ(-14px);
+  display: none;
 }
 
 .orbit-two {
@@ -329,14 +270,7 @@
 }
 
 .scene-glow {
-  position: absolute;
-  z-index: 0;
-  width: 11rem;
-  height: 11rem;
-  border-radius: 50%;
-  background: rgba(108, 218, 164, 0.13);
-  filter: blur(38px);
-  pointer-events: none;
+  display: none;
 }
 
 .glow-one {
@@ -360,41 +294,36 @@
   height: 100%;
   overflow: visible;
   pointer-events: none;
-  transform: translateZ(4px);
 }
 
 .flow-rail {
   fill: none;
-  stroke: rgba(183, 223, 202, 0.1);
+  stroke: var(--scene-grid);
   stroke-width: 1;
 }
 
 .flow-line {
   fill: none;
-  stroke: url(#request-flow-gradient);
+  stroke: var(--scene-line);
   stroke-width: 2;
   stroke-dasharray: 4 6;
-  filter: drop-shadow(0 0 3px rgba(139, 255, 195, 0.62));
   animation: flow-dash 8s linear infinite;
 }
 
 .flow-return {
-  stroke: url(#response-flow-gradient);
+  stroke: var(--scene-line-return);
   stroke-dasharray: 3 6;
-  filter: drop-shadow(0 0 3px rgba(255, 195, 142, 0.52));
   animation-direction: reverse;
 }
 
 .flow-pulse {
-  fill: #b6ffd5;
-  filter: drop-shadow(0 0 5px rgba(137, 255, 193, 0.95));
+  fill: var(--scene-line);
   offset-path: path('M98 170 H140');
   animation: request-pulse 2.8s ease-in-out infinite;
 }
 
 .pulse-delay {
-  fill: #ffca8a;
-  filter: drop-shadow(0 0 5px rgba(255, 189, 122, 0.9));
+  fill: var(--scene-line-return);
   offset-path: path('M400 190 H370');
   animation-delay: -1.4s;
 }
@@ -430,57 +359,29 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1px solid rgba(231, 248, 238, 0.23);
-  border-radius: 0.8rem;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent 55%),
-    linear-gradient(145deg, rgba(47, 77, 65, 0.98), rgba(25, 45, 40, 0.98));
-  box-shadow:
-    0 21px 30px rgba(4, 17, 14, 0.34),
-    0 5px 12px rgba(5, 16, 13, 0.3),
-    inset 0 1px rgba(255, 255, 255, 0.2),
-    inset 0 -12px 20px rgba(1, 11, 9, 0.14);
-  transform: translate3d(-50%, -50%, var(--node-depth)) rotateX(5deg) rotateY(-9deg);
-  transform-style: preserve-3d;
-  animation: node-float 6s ease-in-out infinite;
+  border: 1px solid var(--scene-border);
+  border-radius: 0;
+  background: var(--scene-bg);
+  box-shadow: none;
+  transform: translate(-50%, -50%);
+  animation: none;
   transition:
     border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 250ms var(--ease-out);
+    transform 180ms var(--ease-out);
 }
 
 .architecture-node::before {
-  position: absolute;
-  z-index: 1;
-  inset: 0 0 auto;
-  height: 2.4rem;
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), transparent);
-  content: '';
-  pointer-events: none;
+  display: none;
 }
 
 .architecture-node::after {
-  position: absolute;
-  z-index: -1;
-  inset: 0.25rem -0.38rem -0.42rem 0.38rem;
-  border: 1px solid rgba(169, 208, 185, 0.13);
-  border-radius: inherit;
-  background: linear-gradient(145deg, rgba(53, 87, 72, 0.84), rgba(17, 33, 29, 0.96));
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.24);
-  content: '';
-  transform: translateZ(-15px) skewY(-2deg);
+  display: none;
 }
 
 .architecture-node:hover {
   z-index: 5;
-  border-color: rgba(169, 255, 205, 0.76);
-  box-shadow:
-    0 30px 42px rgba(4, 17, 14, 0.42),
-    0 0 28px rgba(110, 233, 170, 0.16),
-    inset 0 1px rgba(255, 255, 255, 0.25);
-  animation-play-state: paused;
-  transform: translate3d(-50%, -56%, calc(var(--node-depth) + 22px)) rotateX(2deg) rotateY(-5deg);
+  border-color: var(--accent);
+  transform: translate(-50%, -54%);
 }
 
 .node-client {
@@ -504,13 +405,7 @@
 
   top: 49%;
   left: 62%;
-  border-color: rgba(164, 200, 255, 0.35);
-  box-shadow:
-    0 24px 36px rgba(4, 17, 14, 0.4),
-    0 0 36px rgba(121, 165, 235, 0.22),
-    inset 0 1px rgba(255, 255, 255, 0.23),
-    inset 0 -12px 20px rgba(1, 11, 9, 0.14);
-  animation-delay: -1.6s;
+  border-color: var(--accent);
 }
 
 .node-data {
@@ -537,14 +432,10 @@
   width: 2.15rem;
   height: 2.15rem;
   place-items: center;
-  border: 1px solid rgba(221, 246, 232, 0.16);
-  border-radius: 0.62rem;
-  background: rgba(167, 224, 190, 0.1);
-  box-shadow:
-    0 5px 14px rgba(0, 0, 0, 0.16),
-    inset 0 1px rgba(255, 255, 255, 0.13);
-  color: #a6edc2;
-  transform: translateZ(15px);
+  border: 1px solid var(--scene-border);
+  border-radius: 0;
+  background: var(--scene-bg);
+  color: var(--scene-line);
 }
 
 .node-icon svg {
@@ -558,21 +449,15 @@
 }
 
 .api-icon {
-  background: rgba(236, 173, 126, 0.11);
-  color: #f0bf8b;
+  color: var(--scene-line-return);
 }
 
 .service-icon {
-  background: rgba(137, 178, 236, 0.17);
-  box-shadow:
-    0 0 18px rgba(137, 178, 236, 0.13),
-    inset 0 1px rgba(255, 255, 255, 0.18);
-  color: #b6d2ff;
+  color: var(--scene-line);
 }
 
 .data-icon {
-  background: rgba(181, 199, 144, 0.12);
-  color: #c4d99a;
+  color: var(--scene-tertiary);
 }
 
 .node-label {
@@ -608,9 +493,8 @@
   top: 19%;
   padding: 0.3rem 0.48rem;
   border: 1px solid rgba(178, 230, 202, 0.16);
-  border-radius: 999px;
-  background: rgba(19, 40, 34, 0.92);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+  border-radius: 0;
+  background: var(--scene-bg);
   color: #bad8c5;
   font: 600 0.625rem/1 var(--font-body);
   letter-spacing: 0.08em;
@@ -641,11 +525,8 @@
   max-width: 100%;
   padding: 0.45rem 0.65rem;
   border: 1px solid var(--scene-card-border);
-  border-radius: 0.5rem;
-  background: rgba(12, 27, 24, 0.92);
-  box-shadow:
-    0 9px 24px rgba(0, 0, 0, 0.2),
-    inset 0 1px rgba(255, 255, 255, 0.08);
+  border-radius: 0;
+  background: #111713;
   color: #dae9df;
   font:
     500 0.875rem/1.5 'Cascadia Code',
@@ -686,8 +567,9 @@
 }
 
 .architecture-footer i {
-  width: 0.38rem;
-  height: 0.38rem;
+  width: 0.36rem;
+  height: 0.36rem;
+  background: var(--scene-line);
 }
 
 .architecture-health {
@@ -695,8 +577,7 @@
 }
 
 .architecture-health > i {
-  background: #76e3a8;
-  box-shadow: 0 0 12px rgba(118, 227, 168, 0.68);
+  background: var(--scene-line);
 }
 
 .architecture-stack {

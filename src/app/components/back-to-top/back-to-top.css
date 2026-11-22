@@ -9,9 +9,9 @@
   place-items: center;
   padding: 0;
   border: 1px solid var(--line-strong);
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--accent-dark);
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
   color: var(--button-ink);
   opacity: 0;
   pointer-events: none;
@@ -29,7 +29,12 @@
 }
 
 .back-to-top:hover {
-  background: var(--accent);
+  background: var(--warm);
+  transform: translateY(-2px);
+}
+
+.back-to-top.is-visible:hover {
+  transform: translateY(-2px);
 }
 
 .back-to-top[aria-hidden='true'] {
