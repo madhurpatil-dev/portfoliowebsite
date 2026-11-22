@@ -13,19 +13,19 @@ export class App {
   private readonly meta = inject(Meta);
 
   constructor() {
-    this.title.setTitle('Madhur Patil — Java Backend Engineer');
+    this.title.setTitle('Madhur Patil — Full Stack Developer');
     this.meta.updateTag({
       name: 'description',
       content:
-        'Madhur Patil is a Java Backend Engineer building reliable services, microservices, and thoughtful software products.',
+        'Madhur Patil is a Full Stack Developer building reliable services, web applications, and thoughtful software products.',
     });
     this.meta.updateTag({
       property: 'og:title',
-      content: 'Madhur Patil — Java Backend Engineer',
+      content: 'Madhur Patil — Full Stack Developer',
     });
     this.meta.updateTag({
       property: 'og:description',
-      content: 'Backend engineering with Java, Spring Boot, and distributed systems.',
+      content: 'Full stack development with Java, Spring Boot, Angular, and distributed systems.',
     });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({

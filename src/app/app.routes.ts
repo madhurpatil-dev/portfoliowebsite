@@ -5,6 +5,6 @@ export const routes: Routes = [
   {
     path: '',
     component: HomePage,
-    title: 'Madhur Patil — Java Backend Engineer',
+    title: 'Madhur Patil — Full Stack Developer',
   },
 ];

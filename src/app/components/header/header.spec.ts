@@ -29,4 +29,15 @@ describe('HeaderComponent', () => {
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
     expect(focus).toHaveBeenCalled();
   });
+
+  it('keeps the theme toggle outside the collapsible navigation menu', () => {
+    const fixture = TestBed.createComponent(HeaderComponent);
+    fixture.detectChanges();
+
+    const themeToggle = fixture.nativeElement.querySelector('.theme-toggle');
+    const navigationMenu = fixture.nativeElement.querySelector('.nav-menu');
+
+    expect(themeToggle.parentElement).not.toBe(navigationMenu);
+    expect(themeToggle.getAttribute('aria-label')).toBe('Switch to light theme');
+  });
 });

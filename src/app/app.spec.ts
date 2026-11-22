@@ -13,9 +13,9 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
 
-    expect(document.title).toBe('Madhur Patil — Java Backend Engineer');
+    expect(document.title).toBe('Madhur Patil — Full Stack Developer');
     expect(document.querySelector('meta[name="description"]')?.getAttribute('content')).toContain(
-      'Java Backend Engineer',
+      'Full Stack Developer',
     );
   });
 });

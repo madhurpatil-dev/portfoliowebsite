@@ -22,6 +22,17 @@
   letter-spacing: -0.02em;
 }
 
+.brand-copy {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.brand-role {
+  color: var(--ink-soft);
+  font: 500 0.62rem/1 var(--font-body);
+  letter-spacing: 0.02em;
+}
+
 .brand-initials {
   display: grid;
   width: 2.25rem;
@@ -142,10 +153,5 @@
   }
   .nav-menu .nav-contact {
     justify-content: space-between;
-  }
-  .theme-toggle {
-    position: absolute;
-    top: -3.05rem;
-    right: 3.2rem;
   }
 }
