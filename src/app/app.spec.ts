@@ -13,9 +13,9 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
 
-    expect(document.title).toBe('Madhur Patil — Full Stack Developer');
+    expect(document.title).toBe('Madhur Patil — AI-Native Full Stack Developer');
     expect(document.querySelector('meta[name="description"]')?.getAttribute('content')).toContain(
-      'Full Stack Developer',
+      'AI-Native Full Stack Developer',
     );
   });
 });
