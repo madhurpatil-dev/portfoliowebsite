@@ -14,12 +14,23 @@
 }
 
 .footer-inner .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   color: #eff1e9;
 }
 
 .footer-inner .brand-initials {
-  border-color: rgba(232, 241, 233, 0.25);
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid rgba(232, 241, 233, 0.25);
+  border-radius: 50%;
   color: #b7dfc0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
 
 @media (max-width: 540px) {
