@@ -39,73 +39,35 @@
         <span class="architecture-version"><i aria-hidden="true"></i> LIVE SYSTEM</span>
       </div>
       <div class="architecture-canvas">
-        <svg
-          class="architecture-lines"
-          viewBox="0 0 500 360"
-          role="img"
-          aria-labelledby="architecture-title architecture-description"
-        >
-          <title id="architecture-title">A request through a backend service</title>
-          <desc id="architecture-description">
-            Client requests pass through an API gateway to a Spring service and a persistent
-            database.
-          </desc>
-          <defs>
-            <marker
-              id="request-flow-arrow"
-              viewBox="0 0 10 10"
-              refX="8"
-              refY="5"
-              markerWidth="6"
-              markerHeight="6"
-              orient="auto-start-reverse"
-            >
-              <path d="M0 0 10 5 0 10Z" fill="var(--accent)" />
-            </marker>
-            <marker
-              id="response-flow-arrow"
-              viewBox="0 0 10 10"
-              refX="8"
-              refY="5"
-              markerWidth="6"
-              markerHeight="6"
-              orient="auto-start-reverse"
-            >
-              <path d="M0 0 10 5 0 10Z" fill="var(--accent)" />
-            </marker>
-          </defs>
-          <path class="flow-rail" d="M96 170 H404" />
-          <path
-            class="flow-line"
-            d="M98 170 H140 M240 170 H270 M370 170 H400"
-            marker-end="url(#request-flow-arrow)"
-          />
-          <path
-            class="response-route"
-            d="M435 176 V315 H250"
-            marker-end="url(#response-flow-arrow)"
-          />
-        </svg>
+        <div class="architecture-flow">
+          <div class="architecture-node node-client" role="group" tabindex="0">
+            <span class="node-label"><span>01</span><small>CLIENT</small></span>
+            <strong>Request</strong>
+          </div>
+          <div class="flow-connector connection-one">
+            <span class="connection-label">HTTPS</span>
+          </div>
+          <div class="architecture-node node-api" role="group" tabindex="0">
+            <span class="node-label"><span>02</span><small>EDGE</small></span>
+            <strong>API gateway</strong>
+          </div>
+          <div class="flow-connector connection-two">
+            <span class="connection-label">REST / JSON</span>
+          </div>
+          <div class="architecture-node node-service" role="group" tabindex="0">
+            <span class="node-label"><span>03</span><small>JAVA</small></span>
+            <strong>Spring service</strong>
+          </div>
+          <div class="flow-connector connection-three">
+            <span class="connection-label">JPA</span>
+          </div>
+          <div class="architecture-node node-data" role="group" tabindex="0">
+            <span class="node-label"><span>04</span><small>DATA</small></span>
+            <strong>Persistence</strong>
+          </div>
+        </div>
         <span class="request-packet" aria-hidden="true"></span>
-        <div class="architecture-node node-client" role="group" tabindex="0">
-          <span class="node-label"><span>01</span><small>CLIENT</small></span>
-          <strong>Request</strong>
-        </div>
-        <div class="architecture-node node-api" role="group" tabindex="0">
-          <span class="node-label"><span>02</span><small>EDGE</small></span>
-          <strong>API gateway</strong>
-        </div>
-        <div class="architecture-node node-service" role="group" tabindex="0">
-          <span class="node-label"><span>03</span><small>JAVA</small></span>
-          <strong>Spring service</strong>
-        </div>
-        <div class="architecture-node node-data" role="group" tabindex="0">
-          <span class="node-label"><span>04</span><small>DATA</small></span>
-          <strong>Persistence</strong>
-        </div>
-        <span class="connection-label connection-one">HTTPS</span>
-        <span class="connection-label connection-two">REST / JSON</span>
-        <span class="connection-label connection-three">JPA</span>
+        <span class="response-route" aria-hidden="true"></span>
         <div class="architecture-code">
           <span>GET</span> /api/v1/accounts <span class="code-status">200 OK</span>
         </div>

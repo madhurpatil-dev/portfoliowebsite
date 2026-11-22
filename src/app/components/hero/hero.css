@@ -188,38 +188,48 @@
   min-height: 360px;
 }
 
-.architecture-lines {
-  position: absolute;
+.architecture-flow {
+  display: grid;
+  min-height: 360px;
+  grid-template-columns:
+    minmax(0, 1fr) minmax(2rem, 0.65fr) minmax(0, 1fr) minmax(2rem, 0.65fr)
+    minmax(0, 1fr) minmax(2rem, 0.65fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.flow-connector {
+  position: relative;
   z-index: 1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
+  align-self: stretch;
+  min-width: 0;
 }
 
-.flow-rail {
-  fill: none;
-  stroke: var(--line);
-  stroke-width: 1;
+.flow-connector::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  border-top: 1px solid var(--accent);
+  content: '';
 }
 
-.flow-line,
-.response-route {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.5;
-}
-
-.response-route {
-  stroke-width: 1;
+.flow-connector::after {
+  position: absolute;
+  top: 50%;
+  right: -0.15rem;
+  padding: 0.1rem 0;
+  background: var(--page);
+  color: var(--accent-dark);
+  content: '›';
+  font: 500 1.2rem/0.8 var(--font-mono);
+  transform: translateY(-50%);
 }
 
 .request-packet {
   position: absolute;
   z-index: 4;
-  top: 49%;
-  left: 13%;
+  top: 50%;
+  left: 8.4%;
   width: 0.65rem;
   height: 0.65rem;
   border: 1px solid var(--page);
@@ -229,11 +239,33 @@
   animation: request-packet-travel 7s linear infinite;
 }
 
-.architecture-node {
+.response-route {
   position: absolute;
+  z-index: 1;
+  display: block;
+  top: calc(50% + 2.125rem);
+  right: 8.4%;
+  bottom: 3rem;
+  border-right: 1px solid var(--accent);
+  pointer-events: none;
+}
+
+.response-route::after {
+  position: absolute;
+  right: -0.28rem;
+  bottom: -0.2rem;
+  padding: 0.1rem 0;
+  background: var(--page);
+  color: var(--accent-dark);
+  content: '↓';
+  font: 500 0.8rem/0.8 var(--font-mono);
+}
+
+.architecture-node {
+  position: relative;
   z-index: 2;
   display: grid;
-  width: 5.8rem;
+  width: auto;
   min-height: 4.25rem;
   align-content: center;
   gap: 0.45rem;
@@ -243,7 +275,7 @@
   background: var(--page);
   color: var(--ink);
   text-align: left;
-  transform: translate(-50%, -50%);
+  transform: none;
   transition:
     border-color 180ms ease,
     background-color 180ms ease;
@@ -258,29 +290,6 @@
 
 .architecture-node:focus-visible {
   outline-color: var(--accent);
-}
-
-.node-client {
-  top: 49%;
-  left: 13%;
-}
-
-.node-api {
-  top: 49%;
-  left: 38%;
-  width: 6.4rem;
-}
-
-.node-service {
-  top: 49%;
-  left: 62%;
-  width: 7.3rem;
-}
-
-.node-data {
-  top: 49%;
-  left: 87%;
-  width: 6.6rem;
 }
 
 .node-label {
@@ -324,42 +333,32 @@
 .connection-label {
   position: absolute;
   z-index: 3;
-  top: 18%;
+  top: calc(50% - 3.75rem);
+  left: 50%;
   padding: 0.3rem 0.4rem;
   border-bottom: 1px solid var(--line-strong);
+  background: var(--page);
   color: var(--muted);
   font: 500 0.62rem/1.2 var(--font-mono);
   letter-spacing: 0.035em;
+  white-space: nowrap;
   transform: translateX(-50%);
-}
-
-.connection-one {
-  left: 25.5%;
-}
-
-.connection-two {
-  left: 50%;
-}
-
-.connection-three {
-  left: 74.5%;
 }
 
 .architecture-code {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   bottom: 0.5rem;
-  left: 50%;
+  right: 8.4%;
   display: flex;
   align-items: center;
   gap: 0.45rem;
   width: max-content;
-  max-width: 100%;
+  max-width: calc(100% - 1rem);
   padding: 0.55rem 0;
   border-top: 1px solid var(--accent);
   color: var(--ink);
   font: 500 0.82rem/1.5 var(--font-mono);
-  transform: translateX(-50%);
 }
 
 .architecture-code > span:first-child,
@@ -438,8 +437,8 @@
 @keyframes request-packet-travel {
   0%,
   4% {
-    top: 49%;
-    left: 13%;
+    top: 50%;
+    left: 8.4%;
     opacity: 0;
   }
 
@@ -448,36 +447,36 @@
   }
 
   30% {
-    top: 49%;
-    left: 38%;
+    top: 50%;
+    left: 36.1%;
   }
 
   52% {
-    top: 49%;
-    left: 62%;
+    top: 50%;
+    left: 63.9%;
   }
 
   73% {
-    top: 49%;
-    left: 87%;
+    top: 50%;
+    left: 91.6%;
   }
 
   81% {
     top: 87.5%;
-    left: 87%;
+    left: 91.6%;
   }
 
   88%,
   94% {
     top: 87.5%;
-    left: 50%;
+    left: 91.6%;
     opacity: 1;
   }
 
   97%,
   100% {
-    top: 49%;
-    left: 13%;
+    top: 50%;
+    left: 8.4%;
     opacity: 0;
   }
 }
@@ -528,26 +527,44 @@
   }
 
   .architecture-canvas {
-    display: grid;
     min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
     padding: 0 var(--gutter) 0.5rem;
   }
 
-  .architecture-lines {
-    display: none;
+  .architecture-flow {
+    min-height: 0;
+    align-content: start;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .request-packet {
     top: 8%;
-    left: calc(var(--gutter) * 0.4);
+    left: calc(var(--gutter) + 1.05rem);
     animation-name: request-packet-travel-mobile;
+  }
+
+  .response-route {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 0;
+    height: 3.7rem;
+    margin-left: 1.05rem;
+    margin-top: -1.7rem;
+    border-right: 0;
+    border-left: 1px solid var(--accent);
+  }
+
+  .response-route::after {
+    right: auto;
+    bottom: -0.2rem;
+    left: -0.28rem;
   }
 
   .architecture-node {
     position: relative;
-    top: auto;
-    left: auto;
     display: flex;
     width: auto;
     min-height: 3.35rem;
@@ -555,11 +572,23 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 0.65rem 0.4rem;
+    padding: 0.65rem 0.4rem 0.65rem 2rem;
     border: 0;
     border-bottom: 1px solid var(--line);
     background: transparent;
     transform: none;
+  }
+
+  .architecture-node::before {
+    position: absolute;
+    top: 50%;
+    left: 1.05rem;
+    width: 0.42rem;
+    height: 0.42rem;
+    border: 1px solid var(--accent);
+    background: var(--page);
+    content: '';
+    transform: translate(-50%, -50%);
   }
 
   .architecture-node:hover,
@@ -567,27 +596,36 @@
     background: transparent;
   }
 
+  .flow-connector {
+    height: 2.5rem;
+  }
+
+  .flow-connector::before {
+    top: -1.7rem;
+    right: auto;
+    bottom: -1.7rem;
+    left: 1.05rem;
+    border-top: 0;
+    border-left: 1px solid var(--line-strong);
+  }
+
+  .flow-connector::after {
+    top: auto;
+    right: auto;
+    bottom: -1.2rem;
+    left: 0.78rem;
+    padding: 0;
+    background: var(--page);
+    content: '↓';
+    font-size: 0.8rem;
+    transform: none;
+  }
+
   .architecture-node strong {
     max-height: none;
     color: var(--ink);
     opacity: 1;
     text-align: right;
-  }
-
-  .node-client {
-    grid-row: 1;
-  }
-
-  .node-api {
-    grid-row: 3;
-  }
-
-  .node-service {
-    grid-row: 5;
-  }
-
-  .node-data {
-    grid-row: 7;
   }
 
   .node-label {
@@ -599,47 +637,26 @@
   }
 
   .connection-label {
-    position: relative;
-    top: auto;
-    left: auto;
-    justify-self: start;
-    margin-left: 0.4rem;
-    padding: 0.3rem 0;
+    top: 50%;
+    left: 2rem;
+    padding: 0 0.25rem;
     border: 0;
     color: var(--muted);
     font-size: 0.62rem;
-    transform: none;
-  }
-
-  .connection-label::before {
-    margin-right: 0.5rem;
-    color: var(--accent-dark);
-    content: '↓';
-  }
-
-  .connection-one {
-    grid-row: 2;
-  }
-
-  .connection-two {
-    grid-row: 4;
-  }
-
-  .connection-three {
-    grid-row: 6;
+    transform: translateY(-50%);
   }
 
   .architecture-code {
     position: relative;
+    right: auto;
     bottom: auto;
-    left: auto;
-    grid-row: 8;
     flex-wrap: wrap;
-    justify-self: start;
     gap: 0.4rem;
     width: max-content;
     max-width: 100%;
-    padding: 0.8rem 0 0.35rem;
+    margin-left: 1.05rem;
+    padding: 0.8rem 0 0.35rem 0.75rem;
+    border-left: 1px solid var(--accent);
     font-size: 0.75rem;
     transform: none;
   }
@@ -695,20 +712,20 @@
   }
 
   28% {
-    top: 30%;
+    top: 32%;
   }
 
   50% {
-    top: 53%;
+    top: 56%;
   }
 
   72% {
-    top: 76%;
+    top: 80%;
   }
 
   84%,
   94% {
-    top: 92%;
+    top: 96%;
     opacity: 1;
   }
 
@@ -727,7 +744,7 @@
 
   .request-packet {
     top: 87.5%;
-    left: 50%;
+    left: 91.6%;
     opacity: 1;
     animation: none;
   }
@@ -735,7 +752,7 @@
 
 @media (max-width: 760px) and (prefers-reduced-motion: reduce) {
   .request-packet {
-    top: 92%;
-    left: calc(var(--gutter) * 0.4);
+    top: 96%;
+    left: calc(var(--gutter) + 1.05rem);
   }
 }
